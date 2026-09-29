@@ -53,7 +53,7 @@ html {
 }
 
 body {
-  font-family: var(--font-cairo), var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: "Cairo", "Inter", system-ui, -apple-system, sans-serif;
   background: var(--bg-dark);
   color: var(--text-primary);
   height: 100dvh;
@@ -100,7 +100,7 @@ body::before {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--text-on-dark);
-  font-family: var(--font-inter), sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -274,7 +274,7 @@ body::before {
   border-radius: var(--radius-btn);
   color: #fff;
   text-decoration: none;
-  font-family: var(--font-cairo), sans-serif;
+  font-family: "Cairo", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -326,7 +326,7 @@ body::before {
 }
 
 html[dir="ltr"] body {
-  font-family: var(--font-inter), var(--font-cairo), system-ui, sans-serif;
+  font-family: "Inter", "Cairo", system-ui, sans-serif;
 }
 
 /* --- Link Icon --- */
