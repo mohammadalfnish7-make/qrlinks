@@ -2,8 +2,6 @@ services:
   qrlinks:
     build: .
     container_name: qrlinks
-    ports:
-      - "3001:80"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
