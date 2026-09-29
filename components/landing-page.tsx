@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Lang = "ar" | "en";
 
 const copy = {
-  title: { ar: "شؤون شباب - سوريا", en: "Youth Affairs - Syria" },
+  title: { ar: "مؤسسة شؤون الشباب", en: "Youth Affairs - Syria" },
   subtitle: {
     ar: "تابعنا وتواصل معنا عبر منصاتنا الرسمية",
     en: "Follow us on our official platforms",
@@ -15,7 +15,7 @@ const copy = {
   website: { ar: "موقعنا الإلكتروني", en: "Our Website" },
   telegram: { ar: "قناتنا على تيليغرام", en: "Our Telegram Channel" },
   whatsapp: { ar: "تواصل معنا على واتساب", en: "Contact Us on WhatsApp" },
-  footer: { ar: "© 2026 شؤون شباب - سوريا", en: "© 2026 Youth Affairs - Syria" },
+  footer: { ar: "© 2026 مؤسسة شؤون الشباب", en: "© 2026 Youth Affairs - Syria" },
 } as const;
 
 const links = [
@@ -97,7 +97,7 @@ export function LandingPage() {
           <div className="orb orb-2" aria-hidden="true" />
 
           <div className="logo-container">
-            <img src="/logo.png" alt="شؤون شباب - سوريا" className="logo" />
+            <img src="/logo.png" alt="مؤسسة شؤون الشباب" className="logo" />
           </div>
 
           <h1 className="title">{copy.title[lang]}</h1>
