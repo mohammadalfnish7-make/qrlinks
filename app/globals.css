@@ -356,6 +356,7 @@ html[dir="ltr"] body {
 }
 
 .link-telegram { background: var(--gradient-telegram); }
+.link-linkedin { background: linear-gradient(135deg, #0a66c2, #004182); }
 .link-whatsapp { background: var(--gradient-whatsapp); }
 .link-website { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
 
