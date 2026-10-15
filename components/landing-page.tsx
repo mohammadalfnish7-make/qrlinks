@@ -10,8 +10,11 @@ const copy = {
     ar: "تابعنا وتواصل معنا عبر منصاتنا الرسمية",
     en: "Follow us on our official platforms",
   },
-  facebook: { ar: "صفحتنا على فيسبوك", en: "Our Facebook Page" },
-  instagram: { ar: "حسابنا على انستغرام", en: "Our Instagram Account" },
+  facebook: { ar: "صفحاتنا على فيسبوك", en: "Our Facebook Pages" },
+  facebookPicker: { ar: "صفحات فيسبوك", en: "Facebook pages" },
+  close: { ar: "إغلاق", en: "Close" },
+  instagram: { ar: "حساباتنا على انستغرام", en: "Our Instagram Accounts" },
+  instagramPicker: { ar: "حسابات انستغرام", en: "Instagram accounts" },
   linkedin: { ar: "حسابنا على لينكدإن", en: "Our LinkedIn Profile" },
   website: { ar: "موقعنا الإلكتروني", en: "Our Website" },
   telegram: { ar: "قناتنا على تيليغرام", en: "Our Telegram Channel" },
@@ -64,8 +67,42 @@ const links = [
   },
 ] as const;
 
+const facebookPages = [
+  { ar: "مؤسسة شباب سوريا - سوريا", en: "Youth Affairs - Syria", href: "https://www.facebook.com/share/1JRyVL9RQs/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - اللاذقية", en: "Youth Affairs - Latakia", href: "https://www.facebook.com/share/19uFLC6R7C/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - حلب", en: "Youth Affairs - Aleppo", href: "https://www.facebook.com/share/1FAugJXcMK/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - إدلب", en: "Youth Affairs - Idlib", href: "https://www.facebook.com/share/1E2AQGeofi/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://www.facebook.com/share/14sh3HGkSTC/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://www.facebook.com/share/14qigPrTQuU/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - حمص", en: "Youth Affairs - Homs", href: "https://www.facebook.com/share/19afSn1BZk/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://www.facebook.com/share/1ckMtLbqJT/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - طرطوس", en: "Youth Affairs - Tartous", href: "https://www.facebook.com/share/1Ge1ykzKhG/?mibextid=wwXIfr" },
+  { ar: "مؤسسة شباب سوريا - درعا", en: "Youth Affairs - Daraa", href: "https://www.facebook.com/share/19bBEE2g2N/?mibextid=wwXIfr" },
+] as const;
+
+const instagramPages = [
+  { ar: "مؤسسة شباب سوريا - سوريا", en: "Youth Affairs - Syria", href: "https://instagram.com/youthafairs?psln=MWw5OXo2MjdwZ3g2YQ%3D%3D&utm_source=qr" },
+  { ar: "مؤسسة شباب سوريا - طرطوس", en: "Youth Affairs - Tartous", href: "https://instagram.com/youthtartous?psln=MXZyNHJzb2FnM20ydw%3D%3D" },
+  { ar: "مؤسسة شباب سوريا - درعا", en: "Youth Affairs - Daraa", href: "https://instagram.com/youthdaraa?srtk=NzZzYjRncnVqdGN1" },
+  { ar: "مؤسسة شباب سوريا - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://instagram.com/youthaffairsdeirezzor?cplk=cmc1ZTRpMm5tbXl4" },
+  { ar: "مؤسسة شباب سوريا - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://instagram.com/youthdamascus?mdxt=cG80OXA4bWZ1emp5" },
+  { ar: "مؤسسة شباب سوريا - حمص", en: "Youth Affairs - Homs", href: "https://instagram.com/youthaffairshoms?rpxt=MW5jdGQ1ZDNnaHNjcA%3D%3D" },
+  { ar: "مؤسسة شباب سوريا - اللاذقية", en: "Youth Affairs - Latakia", href: "https://instagram.com/youthaffairslatakia?xtok=YjB2MmV2cGYwNWE%3D" },
+  { ar: "مؤسسة شباب سوريا - إدلب", en: "Youth Affairs - Idlib", href: "https://instagram.com/youthaffairsidlib?exln=MTduc3RzcDB6Nzc2ZQ%3D%3D" },
+  { ar: "مؤسسة شباب سوريا - حلب", en: "Youth Affairs - Aleppo", href: "https://instagram.com/youth_aleppo?dlrf=aHBtb3N3eHk5N213" },
+  { ar: "مؤسسة شباب سوريا - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://instagram.com/youthqunaytirah?rpxt=MXMzdmZpZmE3a2t2cQ%3D%3D" },
+] as const;
+
+const pickers = {
+  facebook: { title: copy.facebookPicker, pages: facebookPages, listClass: "" },
+  instagram: { title: copy.instagramPicker, pages: instagramPages, listClass: "picker-instagram" },
+} as const;
+
+type PickerId = keyof typeof pickers;
+
 export function LandingPage() {
   const [lang, setLang] = useState<Lang>("ar");
+  const [picker, setPicker] = useState<PickerId | null>(null);
 
   useEffect(() => {
     const saved = localStorage.getItem("qrlinks-lang");
@@ -78,6 +115,15 @@ export function LandingPage() {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);
+
+  useEffect(() => {
+    if (!picker) return;
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setPicker(null);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [picker]);
 
   function toggleLanguage() {
     const next: Lang = lang === "ar" ? "en" : "ar";
@@ -112,20 +158,34 @@ export function LandingPage() {
           <p className="subtitle">{copy.subtitle[lang]}</p>
 
           <nav className="links-container" aria-label="Social media links">
-            {links.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`link-btn ${link.className}`}
-              >
-                <svg className="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d={link.icon} />
-                </svg>
-                <span>{link.label[lang]}</span>
-              </a>
-            ))}
+            {links.map((link) =>
+              link.id === "facebook" || link.id === "instagram" ? (
+                <button
+                  key={link.id}
+                  type="button"
+                  className={`link-btn ${link.className}`}
+                  onClick={() => setPicker(link.id)}
+                >
+                  <svg className="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={link.icon} />
+                  </svg>
+                  <span>{link.label[lang]}</span>
+                </button>
+              ) : (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`link-btn ${link.className}`}
+                >
+                  <svg className="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={link.icon} />
+                  </svg>
+                  <span>{link.label[lang]}</span>
+                </a>
+              ),
+            )}
           </nav>
 
           <footer className="footer">
@@ -133,6 +193,39 @@ export function LandingPage() {
           </footer>
         </main>
       </div>
+
+      {picker && (
+        <div className="picker-backdrop" onClick={() => setPicker(null)}>
+          <div
+            className="picker"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="page-picker-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="picker-header">
+              <h2 id="page-picker-title">{pickers[picker].title[lang]}</h2>
+              <button
+                type="button"
+                className="picker-close"
+                aria-label={copy.close[lang]}
+                onClick={() => setPicker(null)}
+              >
+                ×
+              </button>
+            </div>
+            <ul className={`picker-list ${pickers[picker].listClass}`}>
+              {pickers[picker].pages.map((page) => (
+                <li key={page.href}>
+                  <a href={page.href} target="_blank" rel="noopener noreferrer">
+                    {page[lang]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   );
 }

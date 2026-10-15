@@ -264,6 +264,12 @@ body::before {
 }
 
 /* --- Link Button --- */
+button.link-btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
 .link-btn {
   display: flex;
   align-items: center;
@@ -359,6 +365,85 @@ html[dir="ltr"] body {
 .link-linkedin { background: linear-gradient(135deg, #0a66c2, #004182); }
 .link-whatsapp { background: var(--gradient-whatsapp); }
 .link-website { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
+
+/* --- Page picker --- */
+.picker-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.picker {
+  width: min(100%, 420px);
+  max-height: min(80dvh, 640px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--text-primary);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.picker-header h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.picker-close {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  color: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.picker-list {
+  list-style: none;
+  overflow: auto;
+  padding: 0 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.picker-list a {
+  display: block;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.8rem;
+  background: var(--gradient-facebook);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.picker-list.picker-instagram a {
+  background: var(--gradient-instagram);
+}
+
+.picker-list a:hover {
+  filter: brightness(1.08);
+}
 
 /* --- Footer --- */
 .footer {
@@ -525,5 +610,16 @@ html[dir="ltr"] body {
   .logo {
     background: #ffffff;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .picker {
+    background: rgba(30, 41, 59, 0.98);
+    color: var(--text-on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .picker-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-on-dark);
   }
 }
