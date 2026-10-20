@@ -14,9 +14,9 @@ import "@fontsource/inter/latin-700.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "مؤسسة شباب سوريا | Youth Affairs - Syria",
+  title: "المؤسسة السورية للشباب | Youth Affairs - Syria",
   description:
-    "مؤسسة شباب سوريا | Youth Affairs - Syria — تابعنا وتواصل معنا عبر منصاتنا الرسمية",
+    "المؤسسة السورية للشباب | Youth Affairs - Syria — تابعنا وتواصل معنا عبر منصاتنا الرسمية",
 };
 
 export const viewport: Viewport = {

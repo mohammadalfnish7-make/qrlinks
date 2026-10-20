@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Lang = "ar" | "en";
 
 const copy = {
-  title: { ar: "مؤسسة شباب سوريا", en: "Youth Affairs - Syria" },
+  title: { ar: "المؤسسة السورية للشباب", en: "Youth Affairs - Syria" },
   subtitle: {
     ar: "تابعنا وتواصل معنا عبر منصاتنا الرسمية",
     en: "Follow us on our official platforms",
@@ -19,7 +19,7 @@ const copy = {
   website: { ar: "موقعنا الإلكتروني", en: "Our Website" },
   telegram: { ar: "قناتنا على تيليغرام", en: "Our Telegram Channel" },
   whatsapp: { ar: "تواصل معنا على واتساب", en: "Contact Us on WhatsApp" },
-  footer: { ar: "© 2026 مؤسسة شباب سوريا", en: "© 2026 Youth Affairs - Syria" },
+  footer: { ar: "© 2026 المؤسسة السورية للشباب", en: "© 2026 Youth Affairs - Syria" },
 } as const;
 
 const links = [
@@ -68,29 +68,29 @@ const links = [
 ] as const;
 
 const facebookPages = [
-  { ar: "مؤسسة شباب سوريا - سوريا", en: "Youth Affairs - Syria", href: "https://www.facebook.com/share/1JRyVL9RQs/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - اللاذقية", en: "Youth Affairs - Latakia", href: "https://www.facebook.com/share/19uFLC6R7C/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - حلب", en: "Youth Affairs - Aleppo", href: "https://www.facebook.com/share/1FAugJXcMK/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - إدلب", en: "Youth Affairs - Idlib", href: "https://www.facebook.com/share/1E2AQGeofi/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://www.facebook.com/share/14sh3HGkSTC/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://www.facebook.com/share/14qigPrTQuU/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - حمص", en: "Youth Affairs - Homs", href: "https://www.facebook.com/share/19afSn1BZk/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://www.facebook.com/share/1ckMtLbqJT/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - طرطوس", en: "Youth Affairs - Tartous", href: "https://www.facebook.com/share/1Ge1ykzKhG/?mibextid=wwXIfr" },
-  { ar: "مؤسسة شباب سوريا - درعا", en: "Youth Affairs - Daraa", href: "https://www.facebook.com/share/19bBEE2g2N/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - سوريا", en: "Youth Affairs - Syria", href: "https://www.facebook.com/share/1JRyVL9RQs/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - اللاذقية", en: "Youth Affairs - Latakia", href: "https://www.facebook.com/share/19uFLC6R7C/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - حلب", en: "Youth Affairs - Aleppo", href: "https://www.facebook.com/share/1FAugJXcMK/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - إدلب", en: "Youth Affairs - Idlib", href: "https://www.facebook.com/share/1E2AQGeofi/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://www.facebook.com/share/14sh3HGkSTC/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://www.facebook.com/share/14qigPrTQuU/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - حمص", en: "Youth Affairs - Homs", href: "https://www.facebook.com/share/19afSn1BZk/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://www.facebook.com/share/1ckMtLbqJT/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - طرطوس", en: "Youth Affairs - Tartous", href: "https://www.facebook.com/share/1Ge1ykzKhG/?mibextid=wwXIfr" },
+  { ar: "المؤسسة السورية للشباب - درعا", en: "Youth Affairs - Daraa", href: "https://www.facebook.com/share/19bBEE2g2N/?mibextid=wwXIfr" },
 ] as const;
 
 const instagramPages = [
-  { ar: "مؤسسة شباب سوريا - سوريا", en: "Youth Affairs - Syria", href: "https://instagram.com/youthafairs?psln=MWw5OXo2MjdwZ3g2YQ%3D%3D&utm_source=qr" },
-  { ar: "مؤسسة شباب سوريا - طرطوس", en: "Youth Affairs - Tartous", href: "https://instagram.com/youthtartous?psln=MXZyNHJzb2FnM20ydw%3D%3D" },
-  { ar: "مؤسسة شباب سوريا - درعا", en: "Youth Affairs - Daraa", href: "https://instagram.com/youthdaraa?srtk=NzZzYjRncnVqdGN1" },
-  { ar: "مؤسسة شباب سوريا - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://instagram.com/youthaffairsdeirezzor?cplk=cmc1ZTRpMm5tbXl4" },
-  { ar: "مؤسسة شباب سوريا - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://instagram.com/youthdamascus?mdxt=cG80OXA4bWZ1emp5" },
-  { ar: "مؤسسة شباب سوريا - حمص", en: "Youth Affairs - Homs", href: "https://instagram.com/youthaffairshoms?rpxt=MW5jdGQ1ZDNnaHNjcA%3D%3D" },
-  { ar: "مؤسسة شباب سوريا - اللاذقية", en: "Youth Affairs - Latakia", href: "https://instagram.com/youthaffairslatakia?xtok=YjB2MmV2cGYwNWE%3D" },
-  { ar: "مؤسسة شباب سوريا - إدلب", en: "Youth Affairs - Idlib", href: "https://instagram.com/youthaffairsidlib?exln=MTduc3RzcDB6Nzc2ZQ%3D%3D" },
-  { ar: "مؤسسة شباب سوريا - حلب", en: "Youth Affairs - Aleppo", href: "https://instagram.com/youth_aleppo?dlrf=aHBtb3N3eHk5N213" },
-  { ar: "مؤسسة شباب سوريا - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://instagram.com/youthqunaytirah?rpxt=MXMzdmZpZmE3a2t2cQ%3D%3D" },
+  { ar: "المؤسسة السورية للشباب - سوريا", en: "Youth Affairs - Syria", href: "https://instagram.com/youthafairs?psln=MWw5OXo2MjdwZ3g2YQ%3D%3D&utm_source=qr" },
+  { ar: "المؤسسة السورية للشباب - طرطوس", en: "Youth Affairs - Tartous", href: "https://instagram.com/youthtartous?psln=MXZyNHJzb2FnM20ydw%3D%3D" },
+  { ar: "المؤسسة السورية للشباب - درعا", en: "Youth Affairs - Daraa", href: "https://instagram.com/youthdaraa?srtk=NzZzYjRncnVqdGN1" },
+  { ar: "المؤسسة السورية للشباب - دير الزور", en: "Youth Affairs - Deir ez-Zor", href: "https://instagram.com/youthaffairsdeirezzor?cplk=cmc1ZTRpMm5tbXl4" },
+  { ar: "المؤسسة السورية للشباب - دمشق وريفها", en: "Youth Affairs - Damascus", href: "https://instagram.com/youthdamascus?mdxt=cG80OXA4bWZ1emp5" },
+  { ar: "المؤسسة السورية للشباب - حمص", en: "Youth Affairs - Homs", href: "https://instagram.com/youthaffairshoms?rpxt=MW5jdGQ1ZDNnaHNjcA%3D%3D" },
+  { ar: "المؤسسة السورية للشباب - اللاذقية", en: "Youth Affairs - Latakia", href: "https://instagram.com/youthaffairslatakia?xtok=YjB2MmV2cGYwNWE%3D" },
+  { ar: "المؤسسة السورية للشباب - إدلب", en: "Youth Affairs - Idlib", href: "https://instagram.com/youthaffairsidlib?exln=MTduc3RzcDB6Nzc2ZQ%3D%3D" },
+  { ar: "المؤسسة السورية للشباب - حلب", en: "Youth Affairs - Aleppo", href: "https://instagram.com/youth_aleppo?dlrf=aHBtb3N3eHk5N213" },
+  { ar: "المؤسسة السورية للشباب - القنيطرة", en: "Youth Affairs - Quneitra", href: "https://instagram.com/youthqunaytirah?rpxt=MXMzdmZpZmE3a2t2cQ%3D%3D" },
 ] as const;
 
 const pickers = {
@@ -151,7 +151,7 @@ export function LandingPage() {
           <div className="orb orb-2" aria-hidden="true" />
 
           <div className="logo-container">
-            <img src="/logo.png" alt="مؤسسة شباب سوريا" className="logo" />
+            <img src="/logo.png" alt="المؤسسة السورية للشباب" className="logo" />
           </div>
 
           <h1 className="title">{copy.title[lang]}</h1>
