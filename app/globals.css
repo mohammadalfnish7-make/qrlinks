@@ -200,20 +200,19 @@ body::before {
 }
 
 .logo {
-  width: 120px;
-  height: 120px;
-  border-radius: var(--radius-logo);
+  width: min(100%, 280px);
+  height: auto;
+  border-radius: 1rem;
   object-fit: contain;
-  background: #fff;
-  padding: 0.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  background: #000;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   transition: var(--transition-smooth);
   animation: logoEntrance 1s ease-out 0.3s both;
 }
 
 .logo:hover {
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.04);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
 @keyframes logoEntrance {
@@ -476,8 +475,7 @@ html[dir="ltr"] body {
   }
 
   .logo {
-    width: 90px;
-    height: 90px;
+    width: min(100%, 220px);
   }
 
   .title {
@@ -510,8 +508,7 @@ html[dir="ltr"] body {
   }
 
   .logo {
-    width: 140px;
-    height: 140px;
+    width: min(100%, 320px);
   }
 
   .title {
@@ -528,8 +525,7 @@ html[dir="ltr"] body {
 /* Short screens (landscape phones) */
 @media (max-height: 600px) {
   .logo {
-    width: 75px;
-    height: 75px;
+    width: min(100%, 180px);
   }
 
   .title {
@@ -608,8 +604,8 @@ html[dir="ltr"] body {
   }
 
   .logo {
-    background: #ffffff;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #000;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
   }
 
   .picker {

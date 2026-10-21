@@ -151,7 +151,7 @@ export function LandingPage() {
           <div className="orb orb-2" aria-hidden="true" />
 
           <div className="logo-container">
-            <img src="/logo.png" alt="المؤسسة السورية للشباب" className="logo" />
+            <img src="/logo.jpeg" alt="المؤسسة السورية للشباب" className="logo" />
           </div>
 
           <h1 className="title">{copy.title[lang]}</h1>
